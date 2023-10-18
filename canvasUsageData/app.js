@@ -15,7 +15,7 @@ function randomIntFromInterval(min, max) {
 }
 
 (async () => {
-    const browser = await puppeteer.launch({executablePath: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome', headless: false});
+    const browser = await puppeteer.launch({executablePath: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome', headless: "new"});
     console.log("Launched Chrome");
 
     const page = await browser.newPage(); 
