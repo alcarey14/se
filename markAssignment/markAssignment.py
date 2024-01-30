@@ -15,7 +15,7 @@ headers = {
     'Authorization': 'Bearer <TOKEN>'
 } 
 
-CSVFileName = "feedback.csv" # path of input CSV (course_id, assignment_id, student_id, grade, feedback)
+CSVFileName = "feedback.csv" # path of input CSV (course_id, assignment_id, sis_student_id, grade, feedback)
 domain = "<DOMAIN>.instructure.com" 
 
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     for x in feedback_csv:
       course_id = x['course_id']
       assignment_id = x['assignment_id']
-      student_id = x['student_id']
+      sis_student_id = x['sis_student_id']
       grade = x['grade']
       feedback = x['feedback']
 
@@ -37,6 +37,6 @@ if __name__ == '__main__':
         'comment[text_comment]' : feedback,
         'submission[posted_grade]' : grade
       }
-      uri = "https://{0}/api/v1/courses/{1}/assignments/{2}/submissions/sis_user_id:{3}".format(domain, course_id, assignment_id,student_id)
+      uri = f"https://{domain}/api/v1/courses/{course_id}/assignments/{assignment_id}/submissions/sis_user_id:{sis_student_id}"
       result = requests.put(uri, headers=headers, data=form_data)
       print(result.json())
