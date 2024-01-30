@@ -1,1 +1,1 @@
-course_id, assignment_id, student_id, grade, feedback
+course_id, assignment_id, sis_student_id, grade, feedback
