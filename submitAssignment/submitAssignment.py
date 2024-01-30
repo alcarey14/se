@@ -19,7 +19,7 @@ CSVFileName = "input.csv" # full path of input CSV (course_id, assignment_id)
 domain = "<DOMAIN>.instructure.com"
 file="" # file to be submitted
 folder="assignments"
-studentIDs=[""] # array of student SIS IDs
+sis_studentIDs=[""] # array of student SIS IDs
 
 
 #######################################################################################
@@ -32,9 +32,9 @@ if __name__ == '__main__':
     for record in record_csv:
       course_id = record['course_id']
       assignment_id = record['assignment_id']
-      for student in studentIDs:
+      for student in sis_studentIDs:
         files = {'file':(file, open(file,'rb').read())}
-        instfsurl="https://{0}/api/v1/users/self/files?parent_folder_path={1}&as_user_id=sis_user_id:{2}".format(domain,folder, student)
+        instfsurl=f"https://{domain}/api/v1/users/self/files?parent_folder_path={folder}&as_user_id=sis_user_id:{student}"
         fileresult = requests.post(instfsurl, headers=headers, files=files)
         fileResponse = fileresult.json()
         upload_url = fileResponse["upload_url"]
@@ -46,6 +46,6 @@ if __name__ == '__main__':
           'submission[submission_type]' : 'online_upload',
           'submission[file_ids][]' : fileID
         }
-        uri = "https://{0}/api/v1/courses/{1}/assignments/{2}/submissions?as_user_id=sis_user_id:{3}".format(domain, course_id, assignment_id,student)
+        uri = f"https://{domain}/api/v1/courses/{course_id}/assignments/{assignment_id}/submissions?as_user_id=sis_user_id:{student}"
         result = requests.post(uri, headers=headers, data=form_data)
         print(result.status_code)
