@@ -26,7 +26,6 @@ search_term = "<DISCUSSION TITLE>" # Fill in discussion name (or partial name) -
 
 per_page = 50
 id_list = []
-name_list = []
 course_list = []
 
 with open(CSVFileName, 'r') as _f:
