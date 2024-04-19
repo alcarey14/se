@@ -27,17 +27,18 @@ comment = "<TEXT COMMENT>"
 #######################################################################################
 #######################################################################################
 ################ Don't edit anything past here unless you know what you are doing.
+  form_data={
+  'comment[text_comment]' : comment,
+  'submission[posted_grade]' : grade
+  }
+  uri_list = []
 
 def canvasReq(uri):
   result = requests.put(uri, headers=headers, data=form_data, stream=True)
   return result.status_code
 
 def buildArray():
-  form_data={
-  'comment[text_comment]' : comment,
-  'submission[posted_grade]' : grade
-  }
-  uri_list = []
+
   with open(CSVFileName, 'r') as _f:
     submission_csv = csv.DictReader(_f)
     for submission in submission_csv:
