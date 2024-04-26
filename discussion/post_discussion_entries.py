@@ -57,7 +57,7 @@ def buildArray():
   with open(CSVFileName, 'r') as _f:
     discussion_csv = csv.DictReader(_f)
     for disc in discussion_csv:
-      course_id = disc['course_id']
+      course_id = disc['sis_course_id']
       disc_id = disc['disc_id']
       uri = f"https://{domain}/api/v1/courses/sis_course_id:{course_id}/discussion_topics/{disc_id}/entries?as_user_id=sis_user_id:{user1}"
       uri_list1.append(uri)
