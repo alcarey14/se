@@ -13,7 +13,7 @@ import pandas as pd
 # 3. Create CSV via out_df.to_csv("output.csv")
 
 headers = {
-    'Authorization': 'Bearer <DOMAIN>'
+    'Authorization': 'Bearer <TOKEN>'
 }
 CSVFileName = "course_list.csv" # The name of the course CSV file (headers: sis_course_id)
 domain = "<DOMAIN>.instructure.com"
