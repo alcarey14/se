@@ -27,13 +27,14 @@ message1 = "<USER 1 MESSAGE>"
 message2 = "<USER 2 MESSAGE>"
 message3 = "<USER 3 MESSAGE>"
 
-form_data1={'message' : message1}
-form_data2={'message' : message2}
-form_data3={'message' : message3}
 
 #######################################################################################
 #######################################################################################
 ################ Don't edit anything past here unless you know what you are doing.
+
+form_data1={'message' : message1}
+form_data2={'message' : message2}
+form_data3={'message' : message3}
 
 # Leave these alone - just for initial array creation
 uri_list1 = []
