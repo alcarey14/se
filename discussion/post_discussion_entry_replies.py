@@ -18,19 +18,15 @@ headers = {
 
 CSVFileName = "entry_list.csv" # full path of input CSV (sis_course_id, discussion_id, entry_id)
 domain = "<DOMAIN>.instructure.com"
-uri_list1 = []
 
 user1="USER1 SIS ID"
-
 message1 = "<MESSAGE 1>"
-
-form_data1={'message' : message1}
-
-
 
 #######################################################################################
 #######################################################################################
 ################ Don't edit anything past here unless you know what you are doing.
+uri_list1 = []
+form_data1={'message' : message1}
 
 def canvasReq1(uri):
   result = requests.post(uri, headers=headers, data=form_data1, stream=True)
