@@ -43,15 +43,15 @@ uri_list3 = []
 
 def canvasReq1(uri):
   result = requests.post(uri, headers=headers, data=form_data1, stream=True)
-  return result.status_code
+  return result.ok
 
 def canvasReq2(uri):
   result = requests.post(uri, headers=headers, data=form_data2, stream=True)
-  return result.status_code
+  return result.ok
 
 def canvasReq3(uri):
   result = requests.post(uri, headers=headers, data=form_data3, stream=True)
-  return result.status_code
+  return result.ok
 
 
 def buildArray():
