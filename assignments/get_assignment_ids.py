@@ -54,3 +54,4 @@ with open(CSVFileName, 'r') as _f:
 
 x = pd.DataFrame({"sis_course_id": course_list, "assignment_id": id_list })
 x.to_csv("assignment_list.csv")
+print("assignment_list CSV has been successfully created!")
