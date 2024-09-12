@@ -30,7 +30,7 @@ form_data1={'message' : message1}
 
 def canvasReq1(uri):
   result = requests.post(uri, headers=headers, data=form_data1, stream=True)
-  return result.status_code
+  return result.ok
 
 def buildArray():
   with open(CSVFileName, 'r') as _f:
