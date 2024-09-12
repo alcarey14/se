@@ -15,7 +15,7 @@ import pandas as pd
 headers = {
     'Authorization': 'Bearer <TOKEN>'
 }
-CSVFileName = "discussion_list.csv" # The name of the course CSV file (headers: sis_course_id)
+CSVFileName = "discussion_list.csv" # The name of the discussions CSV file (headers: sis_course_id, discussion_id)
 domain = "<DOMAIN>.instructure.com"
 
 
