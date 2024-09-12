@@ -16,7 +16,7 @@ headers = {
     'Authorization': 'Bearer <TOKEN>'
 } 
 
-CSVFileName = "entry_list.csv" # full path of input CSV (course_id, disc_id)
+CSVFileName = "entry_list.csv" # full path of input CSV (sis_course_id, discussion_id, entry_id)
 domain = "<DOMAIN>.instructure.com"
 uri_list1 = []
 
