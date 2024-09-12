@@ -35,7 +35,7 @@ comment = "<TEXT COMMENT>"
 
 def canvasReq(uri):
   result = requests.put(uri, headers=headers, data=form_data, stream=True)
-  return result.status_code
+  return result.ok
 
 def buildArray():
 
