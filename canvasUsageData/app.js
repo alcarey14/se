@@ -25,7 +25,7 @@ function randomIntFromInterval(min, max) {
     await page.type('#pseudonym_session_password', password);
 
     await Promise.all([
-        await page.click('button.Button.Button--login'),
+        await page.click('input.Button.Button--login'),
         page.waitForNavigation({waitUntil: 'networkidle0'})
     ]);    
 
